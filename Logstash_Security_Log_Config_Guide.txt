@@ -9,11 +9,8 @@ file {
 
 2. Filtering & Data Transformation
 There are multiple ways to extract data from logs, such as using the KV Plugin, but since the entire log isn't in a key-value format, I went with Grok, which is more flexible and easier to debug.
-
 Grok Filter Plugin is used to parse raw log messages and extract structured fields like description, hostname, source_ip, and severity.
-
 Mutate Plugin is used to transform severity from 1 → "High". Since gsub doesn’t work on integers, we first convert severity to a string before applying gsub.
-
 Mutate Plugin is used again to remove unnecessary fields to keep the output structured and optimized.
 
 While there are other ways to do this (like translate or if conditions), I chose gsub which works efficiently in this case.
@@ -21,8 +18,8 @@ While there are other ways to do this (like translate or if conditions), I chose
 3. Data Output
 Logstash sends the processed logs to two destinations:
 
-Console Output (stdout) – Which allows me to verify and pased logs.
+a.Console Output (stdout) – Which allows me to verify and pased logs.
 
-Elasticsearch (output Plugin) –The structured logs are indexed in Elasticsearch under the security index for further analysis and visualization in Kibana. 
+b.Elasticsearch (output Plugin) –The structured logs are indexed in Elasticsearch under the security index for further analysis and visualization in Kibana. 
 
-This setup ensures logs are efficiently processed, structured, and available for analysis.
+This setup ensures that logs are efficiently processed, structured, and available for analysis.
