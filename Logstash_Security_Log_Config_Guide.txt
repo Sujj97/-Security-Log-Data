@@ -1,3 +1,7 @@
+WORK FLOW 
+Log File -> Logstash Input Plugin -> Filter Plugin -> Grok Parsing -> Mutate Transformations → Output -> studout → Elasticsearch/Kibana
+
+Explaination:
 1. Data Ingestion
 I'm using the File Input Plugin to ingest logs. In the configuration, we specify the file path to ensure Logstash reads logs from the correct source. The start_position => "beginning" ensures that Logstash processes logs from the start, even if they've been read before. Additionally, I have added sincedb_path => "NUL" to prevent Logstash from keeping track of previously read positions, which avoids missing or reprocessing logs.
 
