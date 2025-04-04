@@ -1,5 +1,5 @@
 WORK FLOW:
-Log File -> Logstash Input Plugin -> Filter Plugin -> Grok Parsing -> Mutate Transformations → Output -> studout → Elasticsearch/Kibana
+Log File -> Logstash Input Plugin -> Filter Plugin -> Grok Parsing -> Mutate Transformations -> Output -> studout -> Elasticsearch/Kibana(for index)
 
 Explanation:
 1. Data Ingestion
